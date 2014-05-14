@@ -7,8 +7,17 @@
  */
 class Image extends \BionicUniversity\Task\AbstractResizer
 {
+    /**
+     * @var image
+     */
     var $image;
+    /**
+     * @var int
+     */
     var $height;
+    /**
+     * @var  int
+     */
     var $width;
 
     /**
@@ -23,7 +32,7 @@ class Image extends \BionicUniversity\Task\AbstractResizer
     }
 
     /**
-     * @param mixed $height
+     * @param int $height
      */
     public function setHeight($height)
     {
@@ -31,23 +40,32 @@ class Image extends \BionicUniversity\Task\AbstractResizer
     }
 
     /**
-     * @param mixed $width
+     * @param int $width
      */
     public function setWidth($width)
     {
         $this->width = $width;
     }
 
+    /**
+     * @return int
+     */
     public function getHeight()
     {
         return $this->height;
     }
 
+    /**
+     * @return int
+     */
     public function getWidth()
     {
         return $this->height;
     }
 
+    /**
+     * @return array
+     */
     public function thumbnail()
     {
         $width  = $this->getWidth();
