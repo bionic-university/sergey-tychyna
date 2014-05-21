@@ -23,10 +23,19 @@ class DemoController extends Controller
     }
 
     /**
-     * @Route("/hello/{name}", name="_demo_hello")
+     * @Route("/hello/{name}/{lastname}", name="_demo_hello")
      * @Template()
      */
-    public function helloAction($name)
+    public function helloAction($name, $lastname)
+    {
+        return array('name' => $name, 'example' => $lastname );
+    }
+
+    /**
+     * @Route("/mytest/{name}", name="_demo_hell")
+     * @Template()
+     */
+    public function mytestAction($name)
     {
         return array('name' => $name);
     }
@@ -37,6 +46,10 @@ class DemoController extends Controller
      */
     public function contactAction(Request $request)
     {
+        echo $request->query->get('name');
+        echo '100';
+
+
         $form = $this->createForm(new ContactType());
         $form->handleRequest($request);
 
