@@ -73,6 +73,11 @@ class Image extends \BionicUniversity\Task\AbstractResizer
         $centralPointX = (int) $width / 2;
         $centralPointY = (int) $height / 2;
 
+        $startX = 0;
+        $startY = 0;
+        $endX   = 0;
+        $endY   = 0;
+
 
         if($width > $height) {
             $startX = $centralPointX - (int)$centralPointY / 2;
