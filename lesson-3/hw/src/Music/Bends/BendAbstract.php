@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 11/4/14
- * Time: 2:55 PM
- */
 
 namespace Music\Bends;
 
