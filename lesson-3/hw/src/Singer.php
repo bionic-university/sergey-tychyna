@@ -14,8 +14,9 @@ class Singer implements MusicInterface {
      * @var BendFabric
      */
     private $bend;
+
     /**
-     * @var
+     * @var BendFabric
      */
     private $genre;
 
@@ -42,8 +43,8 @@ class Singer implements MusicInterface {
      */
     public function sing()
     {
-        $param = $this->bend->getGenre();
-        if((string)$param == (string)$_SERVER['argv'][2]) {
+        $this->genre = $this->bend->getGenre();
+        if((string)$this->genre == (string)$_SERVER['argv'][2]) {
             echo 'I can sing this song!' . PHP_EOL;
         } else {
             echo 'But I am don\'t sing ' . strtoupper($_SERVER['argv'][2]) . ' songs' . PHP_EOL;
