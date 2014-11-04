@@ -2,6 +2,7 @@
 
 
 Class PalindromDetector {
+
     const IS_PALINDROM     = 0;
     const NOT_PALINDROM    = 1;
     const WRONG_SYMBOLS    = 2;
@@ -11,17 +12,17 @@ Class PalindromDetector {
     /**
      * @var string
      */
-    protected $stringToCheck;
+    private $stringToCheck;
     /**
      * @var int
      */
-    protected $resultStatus;
+    private $resultStatus;
 
 
     /**
      * @var array
      */
-    protected $resultMessages = array(
+    private $resultMessages = array(
         self::WRONG_SYMBOLS    => 'Only A-Z symbols allowed',
         self::IS_PALINDROM     => 'Great! You entered palindrom string',
         self::NOT_PALINDROM    => 'Sorry! This is no polindrom string',
@@ -44,7 +45,7 @@ Class PalindromDetector {
     /**
      * @return bool
      */
-    protected function palindromChecker()
+    private function palindromChecker()
     {
         $error = false;
         $stack = new SplStack();
@@ -66,28 +67,28 @@ Class PalindromDetector {
     /**
      * @return bool
      */
-    protected function stringInitialize()
+    private function stringInitialize()
     {
-        $error = false;
+        $isError = false;
         if(count($_SERVER['argv']) == 2){
             if((preg_match("/^[a-zA-Z]+$/", $_SERVER['argv'][1]))) {
                 $this->stringToCheck = $_SERVER['argv'][1];
                 $this->resultStatus = self::NO_ERROR;
             } else {
-                $error = true;
+                $isError = true;
                 $this->resultStatus = self::WRONG_SYMBOLS;
             }
         } else {
-            $error = true;
+            $isError = true;
             $this->resultStatus = self::WRONG_PARAMS_NUM;
         }
-        return !$error;
+        return !$isError;
     }
 
     /**
      *
      */
-    protected function printResult()
+    private function printResult()
     {
         if ($this->resultStatus != self::NO_ERROR) {
             echo $this->resultMessages[$this->resultStatus] . PHP_EOL;
