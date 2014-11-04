@@ -16,6 +16,7 @@ class GenreFabric extends GenreAbstract {
 
     /**
      * @param $genre
+     * @throws \Exception
      */
     public function __construct($genre)
     {
@@ -24,6 +25,16 @@ class GenreFabric extends GenreAbstract {
                 require_once(getcwd() . '/src/Gernes/Pop.php');
                 $this->genre = new Pop();
                 break;
+            case 'rock':
+                require_once(getcwd() . '/src/Gernes/Rock.php');
+                $this->genre = new Rock();
+                break;
+            case 'jazz':
+                require_once(getcwd() . '/src/Gernes/Jazz.php');
+                $this->genre = new Jazz();
+                break;
+            default:
+                throw new \Exception($genre . ' is not in my list! Only pop, rock, jazz');
         }
     }
 

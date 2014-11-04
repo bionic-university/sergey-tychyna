@@ -37,11 +37,11 @@ class BendFabric  extends BendAbstract{
                 break;
             case 'fiji':
                 require_once(getcwd() . '/src/Bends/Fiji.php');
-                $this->bend = new \Music\Bends\Abba();
+                $this->bend = new \Music\Bends\Fiji();
                 return $this->genre = $this->bend->genre;
                 break;
             default:
-                throw new \Exception($bend . ' is not in my list! Only Abba, Quuen and Fiji (Emma Fijerald)');
+                throw new \Exception($bend . ' is not in my list! Only Abba, Queen and Fiji (Emma Fijerald)');
 
         }
     }

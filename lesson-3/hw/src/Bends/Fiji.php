@@ -18,7 +18,7 @@ class Fiji  extends BendAbstract {
     public function __construct()
     {
         echo 'I am Emma Fijerald and I am singing JAZZ music' . PHP_EOL;
-        $this->setGenre('fiji');
-        return $this->genre = 'fiji';
+        $this->setGenre('jazz');
+        return $this->genre = 'jazz';
     }
 }
