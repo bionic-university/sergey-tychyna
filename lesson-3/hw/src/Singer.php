@@ -32,7 +32,7 @@ class Singer implements MusicInterface {
              }
              $this->sing();
          } else {
-             echo 'Please enter singer name and genre' . PHP_EOL;
+             echo 'Please enter singer name and genre. For example: abba pop' . PHP_EOL;
          }
 
      }

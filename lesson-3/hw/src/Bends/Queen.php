@@ -1,7 +1,7 @@
 <?php
 
 namespace Music\Bends;
-
+use Music\GenreFabric;
 
 /**
  * Class Queen
@@ -15,7 +15,8 @@ class Queen extends BendAbstract {
      */
     protected function setGenre($genre)
     {
-
+        $this->genre = new GenreFabric($genre);
+        $this->genre = $this->genre->genre->genre;
     }
 
     /**
@@ -25,6 +26,6 @@ class Queen extends BendAbstract {
     {
         echo 'I am Queen and I am singing ROCK music' . PHP_EOL;
         $this->setGenre('rock');
-        return $this->genre = 'rock';
+        return $this->genre;
     }
 }

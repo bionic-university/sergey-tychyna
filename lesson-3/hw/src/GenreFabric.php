@@ -23,15 +23,15 @@ class GenreFabric extends GenreAbstract {
         switch($genre) {
             case 'pop':
                 require_once(getcwd() . '/src/Gernes/Pop.php');
-                $this->genre = new Pop();
+                $this->genre = new \Music\Genres\Pop();
                 break;
             case 'rock':
                 require_once(getcwd() . '/src/Gernes/Rock.php');
-                $this->genre = new Rock();
+                $this->genre = new \Music\Genres\Rock();
                 break;
             case 'jazz':
                 require_once(getcwd() . '/src/Gernes/Jazz.php');
-                $this->genre = new Jazz();
+                $this->genre = new \Music\Genres\Jazz();
                 break;
             default:
                 throw new \Exception($genre . ' is not in my list! Only pop, rock, jazz');
