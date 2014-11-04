@@ -1,20 +1,21 @@
 <?php
+
 Class simpleUnzip
 {
     const WRONG_PARAM = 1;
-    const UNZIPED = 2;
-    const NO_ERROR = 3;
-    const ERROR = 4;
-    const NOT_EXIST = 5;
+    const UNZIPED     = 2;
+    const NO_ERROR    = 3;
+    const ERROR       = 4;
+    const NOT_EXIST   = 5;
 
     protected $resultStatus;
     protected $zipFile;
     protected $resultMessages = array(
         self::WRONG_PARAM => 'Wrong params',
-        self::UNZIPED => 'Unziped!',
-        self::ERROR => 'Error during unziping',
-        self::NOT_EXIST => 'File do not exist',
-        self::NO_ERROR => 'OK'
+        self::UNZIPED     => 'Unziped!',
+        self::ERROR       => 'Error during unziping',
+        self::NOT_EXIST   => 'File do not exist',
+        self::NO_ERROR    => 'OK'
     );
 
     public function __construct()
@@ -26,6 +27,9 @@ Class simpleUnzip
         $this->printResult();
     }
 
+    /**
+     *
+     */
     protected function paramInitialize()
     {
         if(count($_SERVER['argv']) == 2){
@@ -40,6 +44,9 @@ Class simpleUnzip
         }
     }
 
+    /**
+     *
+     */
     protected function unzip()
     {
         if($zip = zip_open($this->zipFile))
@@ -62,6 +69,10 @@ Class simpleUnzip
             $this->resultStatus = self::ERROR;
         }
     }
+
+    /**
+     *
+     */
     protected function printResult()
     {
         if ($this->resultStatus != self::NO_ERROR) {
