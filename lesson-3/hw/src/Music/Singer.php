@@ -2,8 +2,6 @@
 
 namespace Music;
 
-require_once(getcwd() . '/src/MusicInterface.php');
-
 /**
  * Class Singer
  *

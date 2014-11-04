@@ -5,14 +5,13 @@ namespace Music;
 
 use Music\Genres\GenreAbstract;
 use Music\Genres\Pop;
-require_once(getcwd() . '/src/Gernes/GenreAbstract.php');
 
 /**
  * Class GenreFabric
  *
  * @package Music
  */
-class GenreFabric extends GenreAbstract {
+class GenreFabric extends \Music\Genres\GenreAbstract {
 
     /**
      * @param $genre
@@ -22,15 +21,12 @@ class GenreFabric extends GenreAbstract {
     {
         switch($genre) {
             case 'pop':
-                require_once(getcwd() . '/src/Gernes/Pop.php');
                 $this->genre = new \Music\Genres\Pop();
                 break;
             case 'rock':
-                require_once(getcwd() . '/src/Gernes/Rock.php');
                 $this->genre = new \Music\Genres\Rock();
                 break;
             case 'jazz':
-                require_once(getcwd() . '/src/Gernes/Jazz.php');
                 $this->genre = new \Music\Genres\Jazz();
                 break;
             default:

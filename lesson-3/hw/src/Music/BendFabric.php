@@ -7,8 +7,7 @@
  */
 
 namespace Music;
-require_once(getcwd() . '/src/Bends/BendAbstract.php');
-require_once(getcwd() . '/src/GenreFabric.php');
+
 use Music\Bends\BendAbstract;
 
 /**
@@ -16,7 +15,7 @@ use Music\Bends\BendAbstract;
  *
  * @package Music
  */
-class BendFabric  extends BendAbstract{
+class BendFabric  extends \Music\Bends\BendAbstract{
 
     /**
      * @param $bend
@@ -26,17 +25,14 @@ class BendFabric  extends BendAbstract{
     {
         switch($bend) {
             case 'abba':
-                require_once(getcwd() . '/src/Bends/Abba.php');
                 $this->bend = new \Music\Bends\Abba();
                 return $this->genre = $this->bend->genre;
                 break;
             case 'queen':
-                require_once(getcwd() . '/src/Bends/Queen.php');
                 $this->bend = new \Music\Bends\Queen();
                 return $this->genre = $this->bend->genre;
                 break;
             case 'fiji':
-                require_once(getcwd() . '/src/Bends/Fiji.php');
                 $this->bend = new \Music\Bends\Fiji();
                 return $this->genre = $this->bend->genre;
                 break;

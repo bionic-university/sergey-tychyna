@@ -1,6 +1,8 @@
 <?php
 
-require_once(getcwd() . '/src/Singer.php');
-require_once(getcwd() . '/src/BendFabric.php');
+spl_autoload_register(function ($class) {
+    $class = str_replace('\\', '/', $class);
+    include getcwd() . '/src/'. __NAMESPACE__ . $class . '.php';
+});
 
 $singer = new Music\Singer();
